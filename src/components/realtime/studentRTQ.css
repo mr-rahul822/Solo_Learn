@@ -1,0 +1,46 @@
+.rtq-root { padding: 20px; min-height: 100vh; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; }
+.container { background: rgba(255,255,255,0.95); backdrop-filter: blur(10px); border-radius: 20px; padding: 40px; max-width: 800px; width: 100%; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+.container:hover { transform: translateY(-5px); box-shadow: 0 30px 60px rgba(0,0,0,0.15); }
+.name-form { display: flex; gap: 12px; }
+.name-form input { flex: 1; border: 2px solid #e2e8f0; border-radius: 12px; padding: 15px 20px; font-size: 1.1rem; background: white; }
+.name-form button { background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; padding: 15px 30px; border-radius: 12px; font-weight: 600; box-shadow: 0 4px 15px rgba(102,126,234,0.3); }
+.quiz-container { position: relative; max-width: 900px; margin: 0 auto; }
+#webcam-overlay { position: absolute; right: 24px; bottom: 24px; width: 200px; height: 150px; border-radius: 12px; overflow: hidden; z-index: 99; background: #222; box-shadow: 0 2px 8px rgba(0,0,0,0.3); display: none; }
+#webcam-overlay video { width: 100%; height: 100%; object-fit: cover; }
+.progress-container { background: #e2e8f0; height: 6px; border-radius: 3px; overflow: hidden; margin: 20px 0; }
+.progress-bar { height: 100%; background: linear-gradient(90deg, #667eea, #764ba2); width: 0%; border-radius: 3px; transition: width 0.5s ease; }
+.question-counter { text-align: center; font-size: 1.1rem; color: #4a5568; margin-bottom: 20px; font-weight: 600; }
+.timer-wrapper { background: #e2e8f0; height: 8px; border-radius: 4px; overflow: hidden; margin-bottom: 12px; position: relative; }
+.timer-bar { height: 100%; background: linear-gradient(90deg, #48bb78, #38a169); transition: width 0.3s ease; border-radius: 4px; }
+.timer-text { text-align: center; font-size: 1.2rem; font-weight: 600; color: #2d3748; margin-bottom: 12px; }
+.question-text { font-size: 1.2rem; text-align: center; margin: 8px 0 16px; }
+.options { display: grid; gap: 15px; margin-bottom: 20px; }
+.option-button { background: #fff; color: #2d3748; border: 2px solid #e2e8f0; padding: 20px; border-radius: 12px; text-align: left; transition: all 0.3s ease; cursor: pointer; position: relative; overflow: hidden; }
+.option-button:hover { border-color: #667eea; transform: translateX(5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+.option-button.selected { background: linear-gradient(135deg, #48bb78, #38a169); color: #fff; border-color: #48bb78; }
+.nav-buttons { margin-top: 16px; display: flex; gap: 15px; justify-content: center; }
+.nav-button { background: linear-gradient(135deg, #4a5568, #2d3748); color: #fff; padding: 12px 16px; border-radius: 12px; min-width: 120px; }
+.summary-button { background: linear-gradient(135deg, #48bb78, #38a169); color: #fff; padding: 12px 16px; border-radius: 12px; }
+.submit-button { background: #4caf50; color: #fff; padding: 12px 16px; border-radius: 12px; }
+.results { margin-top: 18px; }
+.welcome-animation { animation: welcomeFloat 3s ease-in-out infinite; }
+.quiz-icon { font-size: 4rem; margin-bottom: 20px; animation: iconSpin 4s linear infinite; text-align: center; }
+.instructions { background: linear-gradient(135deg, #e8f4f8, #f0f8ff); border-radius: 15px; padding: 25px; margin-bottom: 30px; border-left: 5px solid #667eea; }
+.instructions ul { list-style: none; margin-top: 15px; }
+.instructions li { padding: 8px 0; padding-left: 25px; color: #2d3748; position: relative; }
+.instructions li::before { content: "✓"; position: absolute; left: 0; color: #667eea; font-weight: bold; }
+.floating-particles { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; z-index: -1; }
+.particle { position: absolute; background: rgba(255,255,255,0.1); border-radius: 50%; animation: float 6s ease-in-out infinite; }
+.particle:nth-child(1) { width: 20px; height: 20px; left: 10%; animation-delay: 0s; }
+.particle:nth-child(2) { width: 15px; height: 15px; left: 20%; animation-delay: 1s; }
+.particle:nth-child(3) { width: 25px; height: 25px; left: 70%; animation-delay: 2s; }
+.particle:nth-child(4) { width: 18px; height: 18px; left: 80%; animation-delay: 3s; }
+@keyframes float { 0%,100% { transform: translateY(100vh) rotate(0deg); opacity: 0;} 10%,90% {opacity:.8;} 50% { transform: translateY(-10px) rotate(180deg); opacity:1;}}
+@keyframes welcomeFloat { 0%,100% { transform: translateY(0px);} 50% { transform: translateY(-10px);} }
+@keyframes iconSpin { 0% { transform: rotate(0deg) scale(1);} 25% { transform: rotate(90deg) scale(1.1);} 50% { transform: rotate(180deg) scale(1);} 75% { transform: rotate(270deg) scale(1.1);} 100% { transform: rotate(360deg) scale(1);} }
+@keyframes slideIn { from { opacity: 0; transform: translateY(30px);} to { opacity: 1; transform: translateY(0);} }
+.slide-in { animation: slideIn 0.5s ease-out; }
+.pulse { animation: pulse 0.5s ease-in-out; }
+@keyframes pulse { 0% { transform: scale(1);} 50% { transform: scale(1.05);} 100% { transform: scale(1);} }
+
+
